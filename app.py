@@ -1,3 +1,5 @@
+from datetime import datetime, timezone
+
 from flask import Flask, jsonify
 
 profile = {
@@ -7,7 +9,7 @@ profile = {
         "name": "Emmanuel Adu Saah",
         "stack": ["Python", "Django", "Flask"]
     },
-    "timestamp": "Friday October 17, 2025. 4:38:17UTC",
+    "timestamp": datetime.now(timezone.utc).replace(microsecond=0).isoformat().replace('+00:00', 'Z'),
     "fact": "Cats sleep a lot!"
 }
 
